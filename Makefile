@@ -12,7 +12,7 @@ clean:
 		$(GOCLEAN)
 		rm -f $(BINARY_NAME)
 lint:
-		$(GOLINT) run --config styles/.golangci.yml
+		$(GOLINT) run --config .golangci.yml
 test:
 		$(GOTEST) ./... -short
 build:
