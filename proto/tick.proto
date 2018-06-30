@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package btcmarkets;
+
+service MarketData {
+    rpc Tick (TickRequest) returns (TickResponse) {
+    }
+}
+
+message TickRequest {
+    string instrument = 1;
+    string currency = 2;
+}
+
+message TickResponse {
+    double bestBid = 1;
+    double bestAsk = 2;
+    double lastPrice = 3;
+    string currency = 4;
+    string instrument = 5;
+    int32 timestamp = 6;
+    double volume24h = 7;
+}
