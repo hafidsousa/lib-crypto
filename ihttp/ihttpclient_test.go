@@ -40,7 +40,7 @@ func TestNewClient(t *testing.T) {
 			opt:         ihttp.Options{},
 			attempts:    100,
 			minDuration: 1 * time.Nanosecond,
-			maxDuration: 1 * time.Millisecond,
+			maxDuration: 1 * time.Second,
 		},
 		{
 			name:        "shouldLimitRequests",
