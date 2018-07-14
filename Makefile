@@ -17,11 +17,8 @@ test:
 		$(GOTEST) ./... -short
 build:
 		$(GOBUILD) -o $(BINARY_NAME) -v
-run:
-		$(GOBUILD) -o $(BINARY_NAME) -v ./...
-		./$(BINARY_NAME)
 
 # Cross compilation
 build-linux: CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME) -v
 
-.PHONY: all lint test build run
+.PHONY: all clean lint test build
